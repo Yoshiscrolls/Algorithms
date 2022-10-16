@@ -80,14 +80,38 @@ const sortFn = (array) => {
         if (array[i] === middle) {
             continue
         }
+        if (array[i] < middle) {
+            less.push(array[i])
+        } else {
+            bigger.push(array[i])
+        }
+    }
+    return [...sortFn(less), middle, ...sortFn(bigger)]
+}
+
+const newSortFn = (array) => {
+    if (array.length <= 1) {
+        return array
+    }
+    let middleIndex = Math.floor(array.length / 2)
+    let middle = array[middleIndex]
+    let less = []
+    let bigger = []
+
+    for (let i = 0; i < array.length; i++) {
+        count += 1
+        if (array[i] !== middle) {
+
             if (array[i] < middle) {
                 less.push(array[i])
             } else {
                 bigger.push(array[i])
             }
+        }
     }
     return [...sortFn(less), middle, ...sortFn(bigger)]
 }
+
 
 console.log(sortFn(array))
 console.log(count)

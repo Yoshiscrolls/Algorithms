@@ -54,14 +54,31 @@ const selectionFn = (array) => {
         let indexMin = i
         for (let j = i + 1; j < array.length; j++) {
             if (array[j] < array[indexMin]) {
-                let tmp = array[i]
-                array[i] = array[j]
-                array[j] = tmp
+                indexMin = j
             }
+            let tmp = array[i]
+            array[i] = array[indexMin]
+            array[indexMin] = tmp
         }
     }
     return array
 }
 
-console.log(selectionFn(array))
+const sortFn = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        count += 1
+        let indexMin = i
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[j] < array[indexMin]) {
+                indexMin = j
+            }
+            let tmp = array[i]
+            array[i] = array[indexMin]
+            array[indexMin] = tmp
+        }
+    }
+    return array
+}
+
+console.log(sortFn(array))
 console.log(count)

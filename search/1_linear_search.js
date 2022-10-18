@@ -36,4 +36,14 @@ const search = (array, item) => {
     return null
 }
 
-console.log(search(array, 8))
+
+const linearFn = (array, item) => {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+            return array[i]
+        }
+    }
+    return null
+}
+
+console.log(linearFn(array, 8))

@@ -128,6 +128,33 @@ const binarySearchFn = (array, item) => {
     return position
 }
 
-console.log(binarySearchFn(array, 15))
+const finalBinary = (array, item) => {
+    let start = 0;
+    let end = array.length;
+    let middle;
+    let found = false;
+    let position = -1;
+
+    do {
+       middle = Math.floor( (start + end) / 2)
+        count += 1
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === item) {
+                found = true
+                position =  array[i]
+                return position
+            }
+            if (array[i] < item) {
+                start = middle + 1
+            } else {
+                end = middle - 1
+            }
+        }
+    } while (found === false && start <= end)
+    return  position
+}
+
+console.log(finalBinary(array, 15))
 console.log(count);
 

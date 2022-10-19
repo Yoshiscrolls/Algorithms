@@ -1,5 +1,7 @@
 const array = [1, 2, 5, 10, 4, 8, 6, 7, 16]
 
+let count = 0
+
 const findFn = (array, item) => {
     for ( let i = 0; i < array.length; i++) {
         if ( array[i] === item) {
@@ -36,7 +38,6 @@ const search = (array, item) => {
     return null
 }
 
-
 const linearFn = (array, item) => {
     for (let i = 0; i < array.length; i++) {
         if (array[i] === item) {
@@ -46,4 +47,15 @@ const linearFn = (array, item) => {
     return null
 }
 
-console.log(linearFn(array, 8))
+const lastLinear = (array, item) => {
+    for (let i = 0; i < array.length; i++) {
+        count += 1
+        if (item === array[i]) {
+            return array[i]
+        }
+    }
+    return null
+}
+
+console.log(lastLinear(array, 8))
+console.log(count)

@@ -30,5 +30,19 @@ const newRecursiveBinarySearch = (array, item, start, end) => {
     }
 }
 
-console.log(newRecursiveBinarySearch(array, 13, 0, array.length))
+const newRecursiveBinary = (array, item, start, end) => {
+    let middle = Math.floor( (start + end) / 2)
+    count += 1
+
+    if (array[middle] === item) {
+        return middle
+    }
+    if (item < array[middle]) {
+        return newRecursiveBinary(array, item, start, middle - 1)
+    } else {
+        return newRecursiveBinary(array, item, middle + 1, end)
+    }
+}
+
+console.log(newRecursiveBinary(array, 13, 0, array.length))
 console.log(count)

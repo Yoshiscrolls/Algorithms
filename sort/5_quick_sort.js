@@ -134,7 +134,29 @@ const quickSortFn = (array) => {
     return [...quickSortFn(less), middleIndex, ...quickSortFn(bigger)]
 }
 
+const sortQuick = (array) => {
+    if (array.length <= 1) {
+        return array
+    }
 
-console.log(quickSortFn(array))
+    let less = [];
+    let bigger = [];
+    let middleIndex = Math.floor(array.length / 2)
+    let middle = array[middleIndex];
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === middle) {
+            continue
+        }
+        if (array[i] < middle) {
+            less.push(array[i])
+        } else {
+            bigger.push(array[i])
+        }
+    }
+    return [...sortQuick(less), middle, ...sortQuick(bigger)]
+}
+
+console.log(sortQuick(array))
 console.log(count)
 console.log(array.length)

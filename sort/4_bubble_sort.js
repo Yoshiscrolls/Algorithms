@@ -59,14 +59,27 @@ const bubbleFn = (array) => {
         for (let j = 0; j < array.length; j++) {
             count += 1
             if (array[j + 1] < array[j]) {
-             let tmp = array[j]
-             array[j] = array[j + 1]
-             array[j + 1] = tmp
+                let tmp = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = tmp
             }
         }
     }
     return array
 }
 
-console.log(bubbleFn(array))
+const sortBubble = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            if (array[j + 1] < array[j]) {
+                let tmp = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = tmp
+            }
+        }
+    }
+    return array
+}
+
+console.log(sortBubble(array))
 console.log(count)
